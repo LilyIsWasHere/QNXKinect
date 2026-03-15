@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "configurations": [
+    {
+      "type": "qnx-gdb",
+      "request": "launch",
+      "name": "QNX: QNXKinect",
+      "gdb": "gdb",
+      "program": "${workspaceFolder}/build/${config:qnx.arch}-debug/QNXKinect",
+      "remotePath": "QNXKinect",
+      "qnxtarget": "default",
+      "upload": true,
+      "files": [
+        {
+          "hostPath": "${workspaceFolder}/build/${config:qnx.arch}-debug/KinectSim",
+          "remotePath": "KinectSim",
+          "remotePermissions": "755",
+          "operation": "upload"
+        }
+      ],
+      "stopAtEntry": true,
+      "preLaunchTask": "${defaultBuildTask}"
+    }
+  ]
+}
